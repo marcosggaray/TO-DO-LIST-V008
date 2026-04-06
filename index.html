@@ -1,0 +1,614 @@
+<!DOCTYPE html>  
+  
+<html lang="es">  
+<head>  
+<meta charset="UTF-8"/>  
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>  
+<meta name="apple-mobile-web-app-capable" content="yes"/>  
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>  
+<meta name="apple-mobile-web-app-title" content="To Do"/>  
+<meta name="theme-color" content="#e8f0fe"/>  
+<title>To Do List</title>  
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRmYWNmZSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1ODU2RDYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNoaW5lIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4yMikiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LDApIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJmYWRlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4xMykiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0iYmx1ciI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjMuNSIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgoKICA8IS0tIEZvbmRvIC0tPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTE1IiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iMjYwIiByeD0iMTE1IiBmaWxsPSJ1cmwoI3NoaW5lKSIvPgoKICA8IS0tIExpc3RhIGRpZnVtaW5hZGEgZGV0csOhcyAtLT4KICA8ZyBmaWx0ZXI9InVybCgjYmx1cikiIG9wYWNpdHk9IjAuNDUiPgogICAgPCEtLSBGaWxhIDEgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjE3MCIgcj0iMTMiIGZpbGw9IndoaXRlIi8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjE2MCIgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIvPgogICAgPCEtLSBGaWxhIDIgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjIzMCIgcj0iMTMiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjc1Ii8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjIyMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC43NSIvPgogICAgPCEtLSBGaWxhIDMgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjI5MCIgcj0iMTMiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjExOCIgeT0iMjgwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjUiLz4KICAgIDwhLS0gRmlsYSA0IC0tPgogICAgPGNpcmNsZSBjeD0iOTAiIGN5PSIzNTAiIHI9IjEzIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4zIi8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjM0MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4zIi8+CiAgICA8IS0tIEZpbGEgNSAtLT4KICAgIDxjaXJjbGUgY3g9IjkwIiBjeT0iNDEwIiByPSIxMyIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMTUiLz4KICAgIDxyZWN0IHg9IjExOCIgeT0iNDAwIiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjE1Ii8+CiAgPC9nPgoKICA8IS0tIFRleHRvICJUbyIgLS0+CiAgPHRleHQgeD0iMjU2IiB5PSIxOTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiCiAgICBmb250LWZhbWlseT0iJ0hlbHZldGljYSBOZXVlJyxBcmlhbCxzYW5zLXNlcmlmIgogICAgZm9udC13ZWlnaHQ9IjgwMCIgZm9udC1zaXplPSIxNTUiCiAgICBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9Ii0zIj5UbzwvdGV4dD4KCiAgPCEtLSBUZXh0byAiRG8iIC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzc1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgZm9udC1mYW1pbHk9IidIZWx2ZXRpY2EgTmV1ZScsQXJpYWwsc2Fucy1zZXJpZiIKICAgIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMTU1IgogICAgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSItMyI+RG88L3RleHQ+Cjwvc3ZnPgo="/>  
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRmYWNmZSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1ODU2RDYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNoaW5lIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4yMikiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LDApIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJmYWRlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4xMykiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0iYmx1ciI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjMuNSIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgoKICA8IS0tIEZvbmRvIC0tPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTE1IiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iMjYwIiByeD0iMTE1IiBmaWxsPSJ1cmwoI3NoaW5lKSIvPgoKICA8IS0tIExpc3RhIGRpZnVtaW5hZGEgZGV0csOhcyAtLT4KICA8ZyBmaWx0ZXI9InVybCgjYmx1cikiIG9wYWNpdHk9IjAuNDUiPgogICAgPCEtLSBGaWxhIDEgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjE3MCIgcj0iMTMiIGZpbGw9IndoaXRlIi8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjE2MCIgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIvPgogICAgPCEtLSBGaWxhIDIgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjIzMCIgcj0iMTMiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjc1Ii8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjIyMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC43NSIvPgogICAgPCEtLSBGaWxhIDMgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjI5MCIgcj0iMTMiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjExOCIgeT0iMjgwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjUiLz4KICAgIDwhLS0gRmlsYSA0IC0tPgogICAgPGNpcmNsZSBjeD0iOTAiIGN5PSIzNTAiIHI9IjEzIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4zIi8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjM0MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4zIi8+CiAgICA8IS0tIEZpbGEgNSAtLT4KICAgIDxjaXJjbGUgY3g9IjkwIiBjeT0iNDEwIiByPSIxMyIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMTUiLz4KICAgIDxyZWN0IHg9IjExOCIgeT0iNDAwIiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjE1Ii8+CiAgPC9nPgoKICA8IS0tIFRleHRvICJUbyIgLS0+CiAgPHRleHQgeD0iMjU2IiB5PSIxOTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiCiAgICBmb250LWZhbWlseT0iJ0hlbHZldGljYSBOZXVlJyxBcmlhbCxzYW5zLXNlcmlmIgogICAgZm9udC13ZWlnaHQ9IjgwMCIgZm9udC1zaXplPSIxNTUiCiAgICBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9Ii0zIj5UbzwvdGV4dD4KCiAgPCEtLSBUZXh0byAiRG8iIC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzc1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgZm9udC1mYW1pbHk9IidIZWx2ZXRpY2EgTmV1ZScsQXJpYWwsc2Fucy1zZXJpZiIKICAgIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMTU1IgogICAgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSItMyI+RG88L3RleHQ+Cjwvc3ZnPgo="/>  
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"/>  
+<style>  
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}  
+html,body{height:100%;overflow:hidden;font-family:"Plus Jakarta Sans","SF Pro Display",sans-serif;}  
+body{background:linear-gradient(135deg,#dce8fd 0%,#f8e1ec 45%,#ede0f7 75%,#daeeff 100%);}  
+::-webkit-scrollbar{width:4px;}  
+::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.12);border-radius:4px;}  
+.glass{background:rgba(255,255,255,0.52);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(255,255,255,0.78);box-shadow:0 4px 20px rgba(0,0,0,0.07);}  
+.gi{background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);border-radius:9px;padding:9px 12px;font-size:15px;font-family:inherit;color:#1c1c1e;outline:none;width:100%;}  
+.gi:focus{border-color:rgba(0,122,255,0.5);box-shadow:0 0 0 3px rgba(0,122,255,0.1);}  
+.gi::placeholder{color:#aeaeb2;}  
+select.gi option{background:#f2f2f7;}  
+input[type=date].gi::-webkit-calendar-picker-indicator{opacity:.5;}  
+.btn-blue{background:linear-gradient(135deg,#007AFF,#5856D6);color:#fff;border:none;border-radius:11px;padding:10px 18px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}  
+.btn-blue:active{opacity:.85;}  
+.ibtn{background:rgba(0,0,0,0.05);border:none;border-radius:7px;width:28px;height:28px;cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;color:#636366;}  
+.ibtn:active{background:rgba(0,0,0,0.15);}  
+.overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:20px;}  
+.popup{background:rgba(255,255,255,0.93);backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);border-radius:20px;border:1px solid rgba(255,255,255,0.9);box-shadow:0 20px 60px rgba(0,0,0,0.15);padding:22px;max-width:380px;width:100%;}  
+.home-card{background:rgba(255,255,255,0.55);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 8px 32px rgba(0,0,0,0.09);border-radius:28px;padding:32px 26px;display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;width:200px;}  
+.home-card:active{transform:scale(.97);}  
+.sp{background:rgba(255,255,255,0.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:10px;border:1px solid rgba(255,255,255,0.7);padding:5px 8px;display:flex;flex-direction:column;gap:1px;flex:1 1 0;min-width:55px;}  
+.row{background:rgba(255,255,255,0.44);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.7);border-radius:12px;margin-bottom:5px;overflow:hidden;}  
+.row:active{opacity:.8;}  
+#home{display:flex;height:100vh;flex-direction:column;align-items:center;justify-content:center;gap:26px;}  
+#app{display:none;height:100vh;flex-direction:column;}  
+#app.on{display:flex;}  
+.tlist{flex:1;overflow-y:auto;padding:0 8px 40px;-webkit-overflow-scrolling:touch;}  
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);background:rgba(28,28,30,.92);color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;font-weight:600;opacity:0;transition:all .25s;z-index:999;pointer-events:none;}  
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}  
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}  
+@keyframes popIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}  
+@keyframes rowIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}  
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}  
+@keyframes spin{to{transform:rotate(360deg)}}  
+</style>  
+</head>  
+<body>  
+<div id="toast"></div>  
+  
+<!-- HOME -->  
+  
+<div id="home">  
+  <div style="text-align:center;animation:fadeUp .35s ease both">  
+    <div style="font-size:11px;letter-spacing:3px;color:rgba(100,100,130,.7);text-transform:uppercase;font-weight:700;margin-bottom:8px">Bienvenido</div>  
+    <h1 style="font-size:34px;font-weight:800;color:#1c1c1e;letter-spacing:-1px">To Do List</h1>  
+    <div style="font-size:13px;color:#8e8e93;margin-top:6px">Elige tu espacio de trabajo</div>  
+  </div>  
+  <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">  
+    <div class="home-card" style="animation:fadeUp .4s ease .1s both" onclick="openList('work')">  
+      <div style="font-size:44px">&#x1F4BC;</div>  
+      <div style="font-size:18px;font-weight:800;color:#1c1c1e">Trabajo</div>  
+      <div style="font-size:12px;color:#8e8e93;text-align:center;line-height:1.4">Proyectos y tareas profesionales</div>  
+      <div style="background:rgba(0,122,255,.1);color:#007AFF;border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700">TO DO</div>  
+    </div>  
+    <div class="home-card" style="animation:fadeUp .4s ease .18s both" onclick="openList('personal')">  
+      <div style="font-size:44px">&#x1F3E0;</div>  
+      <div style="font-size:18px;font-weight:800;color:#1c1c1e">Personal</div>  
+      <div style="font-size:12px;color:#8e8e93;text-align:center;line-height:1.4">Vida cotidiana, salud, viajes&#x2026;</div>  
+      <div style="background:rgba(88,86,214,.1);color:#5856D6;border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700">PERSONAL</div>  
+    </div>  
+  </div>  
+</div>  
+  
+<!-- APP -->  
+  
+<div id="app">  
+  <div class="glass" style="flex-shrink:0;margin:8px 8px 0;border-radius:18px;padding:11px 14px;max-height:22vh;overflow:hidden;padding-top:max(11px,env(safe-area-inset-top))">  
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:6px">  
+      <div style="display:flex;align-items:center;gap:7px">  
+        <button onclick="goHome()" style="background:rgba(0,0,0,0.06);border:none;border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;color:#636366">&#x2190; Men&uacute;</button>  
+        <div>  
+          <div id="hdr-label" style="font-size:9px;letter-spacing:2px;color:#8e8e93;text-transform:uppercase;font-weight:700"></div>  
+          <div style="font-size:17px;font-weight:800;color:#1c1c1e;letter-spacing:-.5px">To Do List</div>  
+        </div>  
+      </div>  
+      <div style="display:flex;align-items:center;gap:4px;flex-shrink:0">  
+        <span id="sdot" style="width:7px;height:7px;border-radius:50%;background:#30D158;display:inline-block;flex-shrink:0"></span>  
+        <span id="stxt" style="font-size:10px;color:#8e8e93">&#x2014;</span>  
+      </div>  
+    </div>  
+    <div style="display:flex;gap:4px" id="stats"></div>  
+  </div>  
+  
+  <div style="flex-shrink:0;margin:7px 8px 5px;display:flex;align-items:center;gap:6px;flex-wrap:wrap">  
+    <div style="position:relative">  
+      <span style="position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:12px;color:#aeaeb2;pointer-events:none">&#x1F50D;</span>  
+      <input id="q" class="gi" style="padding-left:28px;width:130px;font-size:13px" placeholder="Buscar&#x2026;" oninput="render()"/>  
+    </div>  
+    <button id="btnfin" onclick="toggleFin()" style="background:rgba(0,0,0,0.05);border:1px solid transparent;border-radius:10px;padding:6px 10px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;color:#636366;white-space:nowrap">&#x1F441; Finalizadas</button>  
+    <span id="cnt" style="font-size:11px;color:#8e8e93;flex:1"></span>  
+    <button id="btnnew" class="btn-blue" onclick="toggleForm()">+ Nueva</button>  
+  </div>  
+  
+  <div id="form" style="display:none;flex-shrink:0;margin:0 8px 6px">  
+    <div class="glass" style="border-radius:14px;padding:12px">  
+      <div style="display:grid;gap:7px;margin-bottom:7px">  
+        <div>  
+          <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700">Tarea *</div>  
+          <input id="f-task" class="gi" placeholder="Descripci&oacute;n de la tarea&#x2026;"/>  
+        </div>  
+        <div>  
+          <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700">Comentarios</div>  
+          <input id="f-note" class="gi" placeholder="Notas adicionales&#x2026;"/>  
+        </div>  
+      </div>  
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px">  
+        <div>  
+          <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700">Vencimiento</div>  
+          <input id="f-due" type="date" class="gi"/>  
+        </div>  
+        <div>  
+          <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700">Status</div>  
+          <select id="f-st" class="gi">  
+            <option value="not_started">Not started</option>  
+            <option value="ongoing">Ongoing</option>  
+            <option value="finished">Finished</option>  
+            <option value="standby">Standby</option>  
+          </select>  
+        </div>  
+      </div>  
+      <button id="btnadd" class="btn-blue" onclick="doAdd()" style="width:100%">A&ntilde;adir tarea</button>  
+    </div>  
+  </div>  
+  
+  <div class="glass" id="thdr" style="flex-shrink:0;margin:0 8px 4px;border-radius:10px;padding:0 5px;display:grid;grid-template-columns:44px 36px 1fr 54px 70px 50px">  
+    <div style="font-size:10px;font-weight:700;color:#8e8e93;text-transform:uppercase;letter-spacing:.6px;padding:5px 4px">Delay</div>  
+    <div style="font-size:10px;font-weight:700;color:#8e8e93;text-transform:uppercase;letter-spacing:.6px;padding:5px 4px">N&ordm;</div>  
+    <div style="font-size:10px;font-weight:700;color:#8e8e93;text-transform:uppercase;letter-spacing:.6px;padding:5px 4px">Tarea</div>  
+    <div style="font-size:10px;font-weight:700;color:#8e8e93;text-transform:uppercase;letter-spacing:.6px;padding:5px 4px">Vence</div>  
+    <div style="font-size:10px;font-weight:700;color:#8e8e93;text-transform:uppercase;letter-spacing:.6px;padding:5px 4px">Status</div>  
+    <div></div>  
+  </div>  
+  
+  <div class="tlist" id="tlist"></div>  
+</div>  
+  
+<!-- POPUP COMMENTS -->  
+  
+<div id="pop-c" class="overlay" style="display:none" onclick="this.style.display='none'">  
+  <div class="popup" style="animation:popIn .2s ease" onclick="event.stopPropagation()">  
+    <div id="c-num" style="font-size:10px;color:#8e8e93;font-weight:700;text-transform:uppercase;margin-bottom:5px"></div>  
+    <div id="c-title" style="font-size:15px;font-weight:700;color:#1c1c1e;margin-bottom:14px;line-height:1.35"></div>  
+    <div style="font-size:10px;color:#8e8e93;font-weight:700;margin-bottom:5px;text-transform:uppercase">Comentarios</div>  
+    <div id="c-body" style="font-size:13px;background:rgba(0,0,0,0.04);border-radius:12px;padding:10px 14px;line-height:1.5;min-height:44px"></div>  
+    <div id="c-dates" style="margin-top:12px;font-size:12px;color:#636366;display:flex;gap:14px;flex-wrap:wrap"></div>  
+    <div id="c-photo" style="margin-top:10px"></div>  
+    <button onclick="document.getElementById('pop-c').style.display='none'" style="margin-top:14px;width:100%;background:rgba(0,0,0,0.07);border:none;border-radius:12px;padding:11px;font-size:13px;font-weight:600;color:#1c1c1e;cursor:pointer;font-family:inherit">Cerrar</button>  
+  </div>  
+</div>  
+  
+<!-- POPUP EDIT -->  
+  
+<div id="pop-e" class="overlay" style="display:none" onclick="closeEdit()">  
+  <div class="popup" style="animation:popIn .2s ease" onclick="event.stopPropagation()">  
+    <div style="font-size:13px;font-weight:700;color:#1c1c1e;margin-bottom:14px">&#x270F;&#xFE0F; Editar tarea</div>  
+    <div style="display:grid;gap:7px;margin-bottom:7px">  
+      <div>  
+        <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700">Tarea *</div>  
+        <input id="e-task" class="gi"/>  
+      </div>  
+      <div>  
+        <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700">Comentarios</div>  
+        <input id="e-note" class="gi"/>  
+      </div>  
+    </div>  
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:14px">  
+      <div>  
+        <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700">Vencimiento</div>  
+        <input id="e-due" type="date" class="gi"/>  
+      </div>  
+      <div>  
+        <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700">Status</div>  
+        <select id="e-st" class="gi">  
+          <option value="not_started">Not started</option>  
+          <option value="ongoing">Ongoing</option>  
+          <option value="finished">Finished</option>  
+          <option value="standby">Standby</option>  
+        </select>  
+      </div>  
+    </div>  
+    <div style="display:flex;gap:8px">  
+      <button onclick="doEdit()" class="btn-blue" style="flex:1">Guardar</button>  
+      <button onclick="closeEdit()" style="background:rgba(0,0,0,0.07);border:none;border-radius:12px;padding:12px 16px;font-size:13px;font-weight:600;color:#1c1c1e;cursor:pointer;font-family:inherit">Cancelar</button>  
+    </div>  
+  </div>  
+</div>  
+  
+<!-- POPUP STATUS -->  
+  
+<div id="pop-s" class="overlay" style="display:none" onclick="closeSt()">  
+  <div class="popup" style="max-width:300px;animation:popIn .2s ease" onclick="event.stopPropagation()">  
+    <div style="font-size:13px;font-weight:700;color:#1c1c1e;margin-bottom:14px">Cambiar estado</div>  
+    <div id="st-opts" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div>  
+    <button onclick="closeSt()" style="margin-top:14px;width:100%;background:rgba(0,0,0,0.07);border:none;border-radius:12px;padding:11px;font-size:13px;font-weight:600;color:#1c1c1e;cursor:pointer;font-family:inherit">Cancelar</button>  
+  </div>  
+</div>  
+  
+<script>  
+var SUPA_URL = "https://vbzckbybbaavhckvtjtn.supabase.co";  
+var SUPA_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZiemNrYnliYmFhdmhja3Z0anRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ3ODU0NDQsImV4cCI6MjA5MDM2MTQ0NH0.-4JmFl62B0kX-EBChxwk-1P-lIA_OPCXUJzOGdUf2Xo";  
+var COLS = "44px 36px 1fr 54px 70px 50px";  
+  
+var ST = {  
+  not_started: {label:"Not started", emoji:"&#x23F3;",  color:"#FF453A", bg:"rgba(255,69,58,0.22)"},  
+  ongoing:     {label:"Ongoing",     emoji:"&#x1F504;", color:"#FF9F0A", bg:"rgba(255,159,10,0.22)"},  
+  finished:    {label:"Finished",    emoji:"&#x2705;",  color:"#30D158", bg:"rgba(48,209,88,0.22)"},  
+  standby:     {label:"Standby",     emoji:"&#x23F8;",  color:"#636366", bg:"rgba(99,99,102,0.22)"}  
+};  
+var ST_KEYS = ["not_started","ongoing","finished","standby"];  
+var ACCENT = {work:"#007AFF", personal:"#5856D6"};  
+  
+var mode = "work";  
+var tasks = [];  
+var showFin = false;  
+var editRowId = -1;  
+var stRowId = -1;  
+  
+// ── Supabase API ──────────────────────────────────────────────  
+function apiUrl(path) { return SUPA_URL + "/rest/v1/" + path; }  
+function apiHeaders(extra) {  
+  var h = {  
+    "apikey": SUPA_KEY,  
+    "Authorization": "Bearer " + SUPA_KEY,  
+    "Content-Type": "application/json",  
+    "Prefer": "return=representation"  
+  };  
+  if (extra) { for (var k in extra) h[k] = extra[k]; }  
+  return h;  
+}  
+  
+function apiFetch(method, path, body, cb) {  
+  var opts = { method: method, headers: apiHeaders() };  
+  if (body) opts.body = JSON.stringify(body);  
+  fetch(apiUrl(path), opts)  
+    .then(function(r) { return r.json(); })  
+    .then(function(d) { cb(null, d); })  
+    .catch(function(e) { cb(e, null); });  
+}  
+  
+// ── Sync indicator ───────────────────────────────────────────  
+function setSyncing() {  
+  document.getElementById("sdot").style.background = "#FF9F0A";  
+  document.getElementById("sdot").style.animation = "spin .7s linear infinite";  
+  document.getElementById("stxt").textContent = "Sincronizando\u2026";  
+}  
+function setSynced() {  
+  document.getElementById("sdot").style.background = "#30D158";  
+  document.getElementById("sdot").style.animation = "blink 2.5s infinite";  
+  document.getElementById("stxt").textContent = "Sincronizado \u2713";  
+}  
+function setSyncErr() {  
+  document.getElementById("sdot").style.background = "#FF453A";  
+  document.getElementById("sdot").style.animation = "none";  
+  document.getElementById("stxt").textContent = "Error de red";  
+}  
+  
+// ── Load from Supabase ───────────────────────────────────────  
+function loadTasks(cb) {  
+  setSyncing();  
+  apiFetch("GET", "tasks?mode=eq." + mode + "&order=id.desc", null, function(err, data) {  
+    if (err || !Array.isArray(data)) { setSyncErr(); toast("Error al cargar", false); if (cb) cb(); return; }  
+    tasks = data;  
+    setSynced();  
+    if (cb) cb();  
+  });  
+}  
+  
+// ── Helpers ──────────────────────────────────────────────────  
+function today() {  
+  var d = new Date();  
+  return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate());  
+}  
+function pad(n) { return n < 10 ? "0"+n : ""+n; }  
+function delay(due) {  
+  if (!due) return null;  
+  var t = new Date(); t.setHours(0,0,0,0);  
+  return Math.floor((t - new Date(due+"T00:00:00")) / 86400000);  
+}  
+function fmtDate(d) {  
+  if (!d) return "\u2014";  
+  var dt = new Date(d+"T00:00:00");  
+  var M = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];  
+  return pad(dt.getDate()) + " " + M[dt.getMonth()];  
+}  
+function esc(s) {  
+  return (""+s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");  
+}  
+var _toast;  
+function toast(msg, ok) {  
+  var el = document.getElementById("toast");  
+  el.textContent = msg;  
+  el.style.background = ok === false ? "rgba(255,69,58,.9)" : ok ? "rgba(48,209,88,.9)" : "rgba(28,28,30,.9)";  
+  el.classList.add("show");  
+  clearTimeout(_toast);  
+  _toast = setTimeout(function(){ el.classList.remove("show"); }, 2200);  
+}  
+  
+// ── Navigation ───────────────────────────────────────────────  
+function openList(m) {  
+  mode = m;  
+  showFin = false;  
+  document.getElementById("hdr-label").textContent = m === "work" ? "Trabajo \uD83D\uDCBC" : "Personal \uD83C\uDFE0";  
+  var ac = ACCENT[m];  
+  document.getElementById("btnnew").style.background = "linear-gradient(135deg,"+ac+",#5856D6)";  
+  document.getElementById("btnadd").style.background = "linear-gradient(135deg,"+ac+",#5856D6)";  
+  document.getElementById("home").style.display = "none";  
+  document.getElementById("app").classList.add("on");  
+  document.getElementById("q").value = "";  
+  resetForm();  
+  loadTasks(function() { render(); });  
+}  
+  
+function goHome() {  
+  document.getElementById("app").classList.remove("on");  
+  document.getElementById("form").style.display = "none";  
+  document.getElementById("btnnew").textContent = "+ Nueva";  
+  document.getElementById("home").style.display = "flex";  
+}  
+  
+function resetForm() {  
+  document.getElementById("f-task").value = "";  
+  document.getElementById("f-note").value = "";  
+  document.getElementById("f-due").value  = "";  
+  document.getElementById("f-st").value   = "not_started";  
+}  
+  
+function toggleForm() {  
+  var f = document.getElementById("form");  
+  var btn = document.getElementById("btnnew");  
+  if (f.style.display === "none") {  
+    resetForm();  
+    f.style.display = "block";  
+    btn.innerHTML = "&#x2715; Cancelar";  
+    setTimeout(function(){ document.getElementById("f-task").focus(); }, 50);  
+  } else {  
+    f.style.display = "none";  
+    btn.textContent = "+ Nueva";  
+  }  
+}  
+  
+// ── CRUD ─────────────────────────────────────────────────────  
+function maxNum() {  
+  var m = 0;  
+  for (var i = 0; i < tasks.length; i++) { if (tasks[i].num > m) m = tasks[i].num; }  
+  return m;  
+}  
+  
+function doAdd() {  
+  var tv = document.getElementById("f-task").value.trim();  
+  if (!tv) { toast("Escribe una tarea primero"); return; }  
+  var row = {  
+    mode:  mode,  
+    num:   maxNum() + 1,  
+    task:  tv,  
+    note:  document.getElementById("f-note").value.trim(),  
+    start: today(),  
+    due:   document.getElementById("f-due").value || null,  
+    st:    document.getElementById("f-st").value,  
+    photo: ""  
+  };  
+  setSyncing();  
+  apiFetch("POST", "tasks", row, function(err, data) {  
+    if (err || !data || data.error) { setSyncErr(); toast("Error al guardar", false); return; }  
+    setSynced();  
+    resetForm();  
+    document.getElementById("form").style.display = "none";  
+    document.getElementById("btnnew").textContent = "+ Nueva";  
+    loadTasks(function() { render(); toast("Tarea a\xF1adida", true); });  
+  });  
+}  
+  
+function doDelete(rowId) {  
+  if (!confirm("\xBFEliminar esta tarea?")) return;  
+  setSyncing();  
+  apiFetch("DELETE", "tasks?id=eq." + rowId, null, function(err) {  
+    if (err) { setSyncErr(); toast("Error al eliminar", false); return; }  
+    setSynced();  
+    loadTasks(function() { render(); });  
+  });  
+}  
+  
+function openEdit(rowId) {  
+  var t = null;  
+  for (var i = 0; i < tasks.length; i++) { if (tasks[i].id === rowId) { t = tasks[i]; break; } }  
+  if (!t) return;  
+  editRowId = rowId;  
+  document.getElementById("e-task").value = t.task;  
+  document.getElementById("e-note").value = t.note || "";  
+  document.getElementById("e-due").value  = t.due  || "";  
+  document.getElementById("e-st").value   = t.st;  
+  document.getElementById("pop-e").style.display = "flex";  
+  setTimeout(function(){ document.getElementById("e-task").focus(); }, 50);  
+}  
+function closeEdit() { document.getElementById("pop-e").style.display = "none"; editRowId = -1; }  
+function doEdit() {  
+  var tv = document.getElementById("e-task").value.trim();  
+  if (!tv || editRowId < 0) { toast("Tarea vac\xEDa"); return; }  
+  var upd = {  
+    task:  tv,  
+    note:  document.getElementById("e-note").value.trim(),  
+    due:   document.getElementById("e-due").value || null,  
+    st:    document.getElementById("e-st").value  
+  };  
+  setSyncing();  
+  apiFetch("PATCH", "tasks?id=eq." + editRowId, upd, function(err) {  
+    if (err) { setSyncErr(); toast("Error al guardar", false); return; }  
+    setSynced();  
+    closeEdit();  
+    loadTasks(function() { render(); toast("Tarea actualizada", true); });  
+  });  
+}  
+  
+function openSt(rowId) {  
+  var t = null;  
+  for (var i = 0; i < tasks.length; i++) { if (tasks[i].id === rowId) { t = tasks[i]; break; } }  
+  if (!t) return;  
+  stRowId = rowId;  
+  var html = "";  
+  for (var i = 0; i < ST_KEYS.length; i++) {  
+    var k = ST_KEYS[i];  
+    var s = ST[k];  
+    var active = t.st === k;  
+    html += "<button onclick=\"pickSt('" + k + "')\""  
+      + " style=\"border:2px solid " + (active ? s.color : "transparent") + ";"  
+      + "border-radius:12px;padding:14px 8px;cursor:pointer;font-family:inherit;"  
+      + "font-size:12px;font-weight:700;display:flex;flex-direction:column;"  
+      + "align-items:center;gap:6px;width:100%;"  
+      + "background:" + (active ? s.bg : "rgba(0,0,0,0.05)") + ";"  
+      + "color:" + (active ? s.color : "#636366") + ";\">"  
+      + s.emoji + "<span>" + s.label + "</span></button>";  
+  }  
+  document.getElementById("st-opts").innerHTML = html;  
+  document.getElementById("pop-s").style.display = "flex";  
+}  
+function closeSt() { document.getElementById("pop-s").style.display = "none"; stRowId = -1; }  
+function pickSt(k) {  
+  if (stRowId < 0) return;  
+  setSyncing();  
+  apiFetch("PATCH", "tasks?id=eq." + stRowId, {st: k}, function(err) {  
+    if (err) { setSyncErr(); toast("Error", false); return; }  
+    setSynced();  
+    closeSt();  
+    loadTasks(function() { render(); });  
+  });  
+}  
+  
+function attachPhoto(rowId) {  
+  var inp = document.createElement("input");  
+  inp.type = "file"; inp.accept = "image/*";  
+  inp.onchange = function(e) {  
+    var file = e.target.files[0]; if (!file) return;  
+    var reader = new FileReader();  
+    reader.onload = function(ev) {  
+      setSyncing();  
+      apiFetch("PATCH", "tasks?id=eq." + rowId, {photo: ev.target.result}, function(err) {  
+        if (err) { setSyncErr(); return; }  
+        setSynced();  
+        loadTasks(function() { render(); });  
+      });  
+    };  
+    reader.readAsDataURL(file);  
+  };  
+  inp.click();  
+}  
+  
+function openComments(rowId) {  
+  var t = null;  
+  for (var i = 0; i < tasks.length; i++) { if (tasks[i].id === rowId) { t = tasks[i]; break; } }  
+  if (!t) return;  
+  var del = delay(t.due);  
+  document.getElementById("c-num").textContent = "Tarea #" + t.num;  
+  document.getElementById("c-title").textContent = t.task;  
+  var body = document.getElementById("c-body");  
+  body.textContent = t.note || "Sin comentarios";  
+  body.style.color = t.note ? "#1c1c1e" : "#aeaeb2";  
+  var dc = del > 0 ? "#FF453A" : "#636366";  
+  document.getElementById("c-dates").innerHTML =  
+    "<span>&#x1F4C5; Creada: " + fmtDate(t.start) + "</span>" +  
+    "<span style=\"color:" + dc + "\">&#x1F3C1; Vence: " + fmtDate(t.due) + "</span>";  
+  document.getElementById("c-photo").innerHTML = t.photo  
+    ? "<img src=\"" + t.photo + "\" style=\"width:100%;border-radius:12px;max-height:130px;object-fit:cover\"/>"  
+    : "";  
+  document.getElementById("pop-c").style.display = "flex";  
+}  
+  
+// ── Stats & render ───────────────────────────────────────────  
+function toggleFin() {  
+  showFin = !showFin;  
+  var btn = document.getElementById("btnfin");  
+  if (showFin) {  
+    btn.style.background = "rgba(48,209,88,0.13)";  
+    btn.style.border = "1px solid rgba(48,209,88,0.35)";  
+    btn.style.color = "#30D158";  
+    btn.innerHTML = "&#x2713; Ocultar finalizadas";  
+  } else {  
+    btn.style.background = "rgba(0,0,0,0.05)";  
+    btn.style.border = "1px solid transparent";  
+    btn.style.color = "#636366";  
+    btn.innerHTML = "&#x1F441; Finalizadas";  
+  }  
+  render();  
+}  
+  
+function renderStats() {  
+  var total = tasks.length, fin = 0, ong = 0, ns = 0, sb = 0, hoy = 0;  
+  for (var i = 0; i < tasks.length; i++) {  
+    var t = tasks[i];  
+    if (t.st === "finished")    fin++;  
+    if (t.st === "ongoing")     ong++;  
+    if (t.st === "not_started") ns++;  
+    if (t.st === "standby")     sb++;  
+    var d = delay(t.due);  
+    if (d !== null && d >= 0 && t.st !== "finished") hoy++;  
+  }  
+  function pct(n) { return total ? Math.round(n/total*100)+"%" : "0%"; }  
+  var ac = ACCENT[mode];  
+  var pills = [  
+    {l:"Finished",    v:pct(fin), n:fin, c:"#30D158"},  
+    {l:"Ongoing",     v:pct(ong), n:ong, c:"#FF9F0A"},  
+    {l:"Not started", v:pct(ns),  n:ns,  c:"#FF453A"},  
+    {l:"Standby",     v:pct(sb),  n:sb,  c:"#636366"},  
+    {l:"Hoy",         v:hoy,      n:"due", c:ac}  
+  ];  
+  var html = "";  
+  for (var i = 0; i < pills.length; i++) {  
+    var p = pills[i];  
+    html += "<div class=\"sp\">"  
+      + "<div style=\"font-size:9px;color:#8e8e93;font-weight:600;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap\">" + p.l + "</div>"  
+      + "<div style=\"display:flex;align-items:baseline;gap:3px\">"  
+      + "<span style=\"font-size:13px;font-weight:800;color:" + p.c + "\">" + p.v + "</span>"  
+      + "<span style=\"font-size:9px;color:#8e8e93\">" + p.n + "</span>"  
+      + "</div></div>";  
+  }  
+  document.getElementById("stats").innerHTML = html;  
+}  
+  
+function render() {  
+  renderStats();  
+  var q = document.getElementById("q").value.toLowerCase();  
+  var list = [];  
+  for (var i = 0; i < tasks.length; i++) {  
+    var t = tasks[i];  
+    if (!showFin && t.st === "finished") continue;  
+    if (q && t.task.toLowerCase().indexOf(q) < 0  
+          && (t.note||"").toLowerCase().indexOf(q) < 0  
+          && (""+t.num).indexOf(q) < 0) continue;  
+    list.push(t);  
+  }  
+  document.getElementById("cnt").textContent = list.length + " tareas";  
+  if (!list.length) {  
+    var allDone = true;  
+    for (var i = 0; i < tasks.length; i++) { if (tasks[i].st !== "finished") { allDone = false; break; } }  
+    var msg = (allDone && !showFin) ? "Todo listo. Pulsa Finalizadas para verlas."  
+            : q ? "Ninguna tarea coincide." : "Sin tareas. Pulsa + Nueva para empezar.";  
+    document.getElementById("tlist").innerHTML = "<div style=\"text-align:center;padding:50px 20px;color:#aeaeb2;font-size:14px\">" + msg + "</div>";  
+    return;  
+  }  
+  var html = "";  
+  for (var j = 0; j < list.length; j++) {  
+    var t = list[j];  
+    var rid = t.id;  
+    var del = delay(t.due);  
+    var st = ST[t.st] || ST.not_started;  
+    var fin = t.st === "finished";  
+    var dc, db, rowBg, rowBdr;  
+    if (!t.due || fin) {  
+      dc="#8e8e93"; db="rgba(142,142,147,0.12)"; rowBg="rgba(255,255,255,0.44)"; rowBdr="rgba(255,255,255,0.7)";  
+    } else if (del > 0) {  
+      dc="#FF453A"; db="rgba(255,69,58,0.18)"; rowBg="rgba(255,69,58,0.06)"; rowBdr="rgba(255,69,58,0.22)";  
+    } else if (del === 0) {  
+      dc="#007AFF"; db="rgba(0,122,255,0.18)"; rowBg="rgba(0,122,255,0.07)"; rowBdr="rgba(0,122,255,0.25)";  
+    } else {  
+      dc="#30D158"; db="rgba(48,209,88,0.15)"; rowBg="rgba(48,209,88,0.05)"; rowBdr="rgba(48,209,88,0.2)";  
+    }  
+    var dlbl = !t.due ? "\u2014" : del===0 ? "TODAY" : del>0 ? "+"+del : ""+del;  
+    var stLbl = t.st==="not_started"?"Pend.":t.st==="ongoing"?"Active":t.st==="finished"?"Done":"Hold";  
+    var photoHTML = t.photo  
+      ? "<img src=\""+t.photo+"\" onclick=\"attachPhoto("+rid+")\" style=\"width:22px;height:22px;border-radius:5px;object-fit:cover;cursor:pointer\"/>"  
+      : "<button class=\"ibtn\" onclick=\"attachPhoto("+rid+")\" style=\"font-size:10px\">&#x1F4F7;</button>";  
+  
+    html += "<div class=\"row\" style=\"animation:rowIn .2s ease "+(j*.02)+"s both;opacity:"+(fin?.55:1)+";background:"+rowBg+";border-color:"+rowBdr+"\">"  
+      + "<div style=\"display:grid;grid-template-columns:"+COLS+";align-items:stretch;padding:7px 5px;min-height:58px\">"  
+      + "<div style=\"display:flex;align-items:center;justify-content:center\"><span style=\"font-size:10px;font-weight:800;border-radius:7px;padding:3px 5px;min-width:36px;text-align:center;display:inline-block;color:"+dc+";background:"+db+"\">"+dlbl+"</span></div>"  
+      + "<div style=\"display:flex;align-items:center;font-size:11px;color:#636366;font-weight:700\">"+t.num+"</div>"  
+      + "<div onclick=\"openComments("+rid+")\" style=\"display:flex;align-items:center;padding:0 5px;cursor:pointer\"><div style=\"font-size:12px;font-weight:"+(del>0?700:500)+";color:"+(fin?"#aeaeb2":"#1c1c1e")+";text-decoration:"+(fin?"line-through":"none")+";overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.35\">"+esc(t.task)+"</div></div>"  
+      + "<div style=\"display:flex;align-items:center;justify-content:center;font-size:10px;color:"+(del>0?"#FF453A":"#636366")+";font-weight:"+(del>0?700:400)+";text-align:center;line-height:1.3\">"+fmtDate(t.due)+"</div>"  
+      + "<div style=\"display:flex;align-items:stretch;padding:2px 0\"><button onclick=\"openSt("+rid+")\" style=\"width:100%;border:none;border-radius:9px;cursor:pointer;font-family:inherit;font-size:11px;font-weight:800;color:"+st.color+";background:"+st.bg+";display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:4px 2px\">"+st.emoji+"<span>"+stLbl+"</span></button></div>"  
+      + "<div style=\"display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center\">"  
+      + photoHTML  
+      + "<button class=\"ibtn\" onclick=\"openEdit("+rid+")\" style=\"font-size:11px\">&#x270F;&#xFE0F;</button>"  
+      + "<button class=\"ibtn\" onclick=\"doDelete("+rid+")\" style=\"font-size:10px;color:#FF453A\">&#x2715;</button>"  
+      + "</div>"  
+      + "</div></div>";  
+  }  
+  document.getElementById("tlist").innerHTML = html;  
+}  
+</script>  
+  
+</body>  
+</html>  
